@@ -9,12 +9,19 @@ The data summarized can be found here: `data/shiura_abe_2019.txt`. The first row
 ![model illustration](./fig_model.png)
 
 Schematic representation of the mathematical model used to estimate timescales of Xist upregulation and negative feedback. A system of ordinary differential equations with one variable describing each of the indicated cell states was fitted to the data to estimate the rates with which cells transition between states.
+
 x(7): undifferentiated Xist-negative cells
-x(1): differentiated Xist-negative cells
+
+x(1): differentiated Xist-negative cell
+
 x(2): Xist-monoallelic and X not silenced cells
+
 x(3): Xist-monoallelic and X silenced cells
+
 x(4): Xist-biallelic and X not silenced cells
+
 x(5): Xist-biallelic and one X silenced cells
+
 x(6): Xist-biallelic and both Xs silenced cells
 
 The differential equations describing the model can be found in the script `./scripts/feedback_model.m`. 
@@ -35,17 +42,24 @@ A summary Excel is attached (`./robustness_data/robustness_summary.xlsx`), where
 
 ### Parameter explanation
 k_upx2=k1; % Xist upregulation rate when there are two Xs to upregulate Xist
+
 k_up=k_upx2/2; % Xist upregulation rate
+
 k_silx2=k2; % X-chromosome silencing rate when there are two Xs to be silenced 
+
 k_sil=k_silx2/2; % X-chromosome silencing rate
+
 k_res=k3; % Biallelic resolution (conversion to monoallelic) rate
+
 k_diff=k4; % differentiation rate
+
 k5; % delay
 
 We consider t=0 h at E4.5, however this is not necessarily the time when the upregulation starts. It is simply the latest experimental timepoint for which we have data indicating that Xist upregulation has not begun. Therefore, we add the parameter of the delay (k5) to account for the difference in the time where the upregulation starts.
 
 ## Notes
 Tested using MATLAB version: 9.7.0.1190202 (R2019b)
+
 OS: MarIuX64 2.0 GNU/Linux
 
 ## References
